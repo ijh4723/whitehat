@@ -1,6 +1,6 @@
 # GoAhead Web Server Environment Variables Injection and 'LD_PRELOAD' Remote Code Execution (CVE-2021-42342)
 
-GoAhead 4.x 및 5.x에서 5.1.5 이전 버전에서 발견된 문제가 있습니다.파일 업로드 필터에서 사용자 양식 변수가 CGI 접두사 없이 CGI 스크립트로 전달될 수 있습니다. 이는 신뢰할 수 없는 환경 변수를 취약한 CGI 스크립트로 터널링할 수 있게 합니다.
+GoAhead 4.x 및 5.x, 즉 5.1.5 이전 버전에서 발견된 문제가 있습니다.파일 업로드 필터에서 사용자 양식 변수가 CGI 접두사 없이 CGI 스크립트로 전달될 수 있습니다. 이는 신뢰할 수 없는 환경 변수를 취약한 CGI 스크립트로 터널링할 수 있게 합니다.
 공격자는 이 기능을 사용하여 멀티파트 양식에 공유 라이브러리 페이로드를 업로드하고 LD_PRELOAD 환경 변수를 탈취하여 임의의 코드를 실행할 수 있습니다.
 
 이 취약성은 CVE-2017-17562의 패치 우회입니다.
@@ -24,7 +24,7 @@ docker compose up -d
 
 ## Exploit
 
-우선,이 hijack code를 동적공유라이브러리에 컴파일한다.:
+우선,이 hijack code(payload.c)를 동적공유라이브러리에 컴파일한다.:
 
 ```C
 #include <unistd.h>
