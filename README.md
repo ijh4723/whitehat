@@ -54,7 +54,7 @@ python3 poc.py http://target-ip:8080/cgi-bin/index /path/to/payload.so
 ```
 만약 이 부분에서 "Example"이 나오지 않고 오류가 나온다면 스크립트의 파일 권한이 없어서 그럴 수 있기 때문에 docker에서 index에 실행권한이 있는지 확인하고, 없다면 실행권한을 부여해야 한다.
 
+![image](https://github.com/ijh4723/whitehat/assets/116932933/895004bc-0d82-46dc-9dff-8fe96017c41b)
 
 hijacking이 성공적으로 됐다.:
 
-![](1.png)
